@@ -1,0 +1,63 @@
+# Not working!
+
+version: "2"
+
+services:
+  cassandra-1:
+    image: cassandra
+    environment:
+      CASSANDRA_CLUSTER_NAME: tcluster
+      CASSANDRA_DC: TDC1
+      MAX_HEAP_SIZE: 600M
+      HEAP_NEWSIZE: 100M
+    ports:
+      - '9042:9042'
+      - '9160:9160'
+    networks:
+      cassclus:
+        ipv4_address: 10.0.75.11
+
+  cassandra-2:
+    image: cassandra
+    environment:
+      CASSANDRA_CLUSTER_NAME: tcluster
+      CASSANDRA_DC: TDC1
+      CASSANDRA_SEEDS: 10.0.75.11
+      MAX_HEAP_SIZE: 600M
+      HEAP_NEWSIZE: 100M
+    networks:
+      cassclus:
+        ipv4_address: 10.0.75.12
+
+  cassandra-3:
+    image: cassandra
+    environment:
+      CASSANDRA_CLUSTER_NAME: tcluster
+      CASSANDRA_DC: TDC1
+      CASSANDRA_SEEDS: 10.0.75.11
+      MAX_HEAP_SIZE: 600M
+      HEAP_NEWSIZE: 100M
+    networks:
+      cassclus:
+        ipv4_address: 10.0.75.13
+
+  cassandra-4:
+    image: cassandra
+    environment:
+      CASSANDRA_CLUSTER_NAME: tcluster
+      CASSANDRA_DC: TDC1
+      CASSANDRA_SEEDS: 10.0.75.11
+      MAX_HEAP_SIZE: 600M
+      HEAP_NEWSIZE: 100M
+    networks:
+      cassclus:
+        ipv4_address: 10.0.75.14
+
+networks:
+  cassclus:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 10.0.75.0/24
+          gateway: 10.0.75.1
