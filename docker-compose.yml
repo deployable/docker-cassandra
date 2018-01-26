@@ -2,7 +2,7 @@ version: "2.1"
 
 services:
   cassandra-1:
-    image: cassandra
+    image: cassandra:3.11.1
     environment:
       CASSANDRA_CLUSTER_NAME: tcluster
       CASSANDRA_DC: TDC1
@@ -16,7 +16,7 @@ services:
         ipv4_address: 10.0.75.11
 
   cassandra-2:
-    image: cassandra
+    image: cassandra:3.11.1  
     environment:
       CASSANDRA_CLUSTER_NAME: tcluster
       CASSANDRA_DC: TDC1
@@ -28,7 +28,7 @@ services:
         ipv4_address: 10.0.75.12
 
   cassandra-3:
-    image: cassandra
+    image: cassandra:3.11.1  
     environment:
       CASSANDRA_CLUSTER_NAME: tcluster
       CASSANDRA_DC: TDC1
@@ -40,7 +40,7 @@ services:
         ipv4_address: 10.0.75.13
 
   cassandra-4:
-    image: cassandra
+    image: cassandra:3.11.1  
     environment:
       CASSANDRA_CLUSTER_NAME: tcluster
       CASSANDRA_DC: TDC1
